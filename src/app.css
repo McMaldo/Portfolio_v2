@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+@theme {
+	--color-main: #6e2be2;
+	--color-main-md: #341668;
+	--color-main-sm: #2f145e;
+
+	--color-bg: #060606;
+	--color-font: #fff;
+	--color-font-light: #888;
+	--color-icon: #bbb;
+
+	--color-btn: #0b0b12;
+	--color-btn-hover: #151521;
+	--color-btn-border: #555;
+}
+:root {
+	--color-main-sm: #2f145e;
+}
+
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('/font/ubuntu/Ubuntu-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Orbitron';
+	src: url('/font/orbitron/Orbitron-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Orbitron';
+	src: url('/font/orbitron/Orbitron-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Orbitron';
+	src: url('/font/orbitron/Orbitron-Bold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Orbitron';
+	src: url('/font/orbitron/Orbitron-Black.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+* {
+	font-family: Ubuntu;
+}
+h1 {
+	font-size: 4rem;
+	font-weight: 600;
+}
+h1,
+h2,
+h3 {
+	font-family: Orbitron;
+}
+h2 {
+	font-size: 2rem;
+}
+h2,
+h3 {
+	font-weight: 500;
+}
+::selection {
+	background: var(--color-main-sm);
+}
+::-moz-selection {
+	background: var(--color-main-sm);
+}
