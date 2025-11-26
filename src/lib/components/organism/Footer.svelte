@@ -34,7 +34,9 @@
 	const license: string[] = ['-by', '-nc', '-sa'];
 </script>
 
-<footer class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-6">
+<footer
+	class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm bg-[url(/img/footerWave.svg)] bg-cover bg-center bg-no-repeat p-6"
+>
 	<section
 		class="flex h-full flex-wrap gap-4 lg:grid lg:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]"
 	>

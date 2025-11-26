@@ -76,7 +76,7 @@
 	};
 </script>
 
-<section class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-6">
+<section id="about" class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-6">
 	<h2>About Me</h2>
 	<div class="flex gap-4">
 		<div class="w-fill max-w-70 indent-4 text-sm">

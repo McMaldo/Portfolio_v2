@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { filter } from '../../utils/projectsFilter.js';
+	import { filter } from '../../stores/projectsFilter.js';
 	import Button from '../atom/Button.svelte';
 	import TechIcon from '../atom/TechIcon.svelte';
 	const skills: string[] = [

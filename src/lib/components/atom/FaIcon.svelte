@@ -3,8 +3,9 @@
 		name: string;
 		className?: string;
 	}>();
+	name = name.toLowerCase();
 </script>
 
-<svg class={className + ' inline-block select-none'} aria-hidden="true">
+<svg class={`fa-icon ${className} inline-block select-none`} aria-hidden="true">
 	<use xlink:href={`/icon/faIcons.svg#${name}`}></use>
 </svg>

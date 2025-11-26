@@ -62,7 +62,7 @@
 	];
 </script>
 
-<section class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-6">
+<section id="skills" class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-6">
 	<h2>My Skills</h2>
 	{#each skills as cat (cat.catName)}
 		<SkillsGroup {...cat} />

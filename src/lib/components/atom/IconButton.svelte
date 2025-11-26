@@ -1,12 +1,20 @@
 <script lang="ts">
 	import FaIcon from './FaIcon.svelte';
 
-	export let icon: string = 'envelope';
-	export let href: string | null | undefined;
+	let {
+		icon = 'envelope',
+		href,
+		size = 'md',
+		dark = false,
+		className = ''
+	} = $props<{
+		icon: string;
+		href?: string;
+		size?: string;
+		dark?: boolean;
+		className?: string;
+	}>();
 
-	export let size: string = 'md';
-	export let dark: boolean = false;
-	export let className: string = '';
 	className += dark
 		? ' bg-bg border border-transparent hover:border-btn-border'
 		: ' bg-btn group-hover:bg-btn-hover hover:bg-btn-hover';
