@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { projectCard } from '$lib/types/projectCard';
+	import type { ProjectCard } from '$lib/types/projectCard';
 	import FaIcon from '../atom/FaIcon.svelte';
 	import IconButton from '../atom/IconButton.svelte';
 	import Link from '../atom/Link.svelte';
 	import TechIcon from '../atom/TechIcon.svelte';
 
-	export let project: projectCard;
+	let project = $props<ProjectCard>();
 </script>
 
 <article

@@ -32,7 +32,7 @@
 	onmouseenter={() => (isFilterOpened = true)}
 	onmouseleave={() => (isFilterOpened = false)}
 >
-	<Button icon="filter" name="Filter" size="sm" />
+	<Button icon="filter" name="Filter" size="sm" fn={() => (isFilterOpened = !isFilterOpened)} />
 	{#if isFilterOpened}
 		<div
 			class="flex flex-col gap-2 rounded-lg border border-main-sm bg-btn p-2 shadow-md shadow-bg"

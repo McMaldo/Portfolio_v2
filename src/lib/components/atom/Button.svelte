@@ -5,13 +5,13 @@
 		name,
 		size = 'md',
 		className = '',
-		navigateTo
+		fn
 	} = $props<{
 		icon?: string;
 		name?: string;
 		size?: string;
 		className?: string;
-		navigateTo?: string;
+		fn?: () => void | boolean | string;
 	}>();
 
 	className +=
@@ -27,11 +27,8 @@
 </script>
 
 <button
-	class={`bg-btn hover:bg-btn-hover flex cursor-pointer items-center justify-center gap-1 transition-colors select-none ${className}`}
-	onclick={() =>
-		navigateTo
-			? document.querySelector('#' + navigateTo)?.scrollIntoView({ behavior: 'smooth' })
-			: ''}
+	class={`flex cursor-pointer items-center justify-center gap-1 bg-btn transition-colors select-none hover:bg-btn-hover ${className}`}
+	onclick={fn}
 >
 	{#if icon}
 		<FaIcon name={icon} className={name ? 'size-4' : 'size-6'} />

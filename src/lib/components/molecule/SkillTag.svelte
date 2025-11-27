@@ -7,7 +7,7 @@
 </script>
 
 <article
-	class="group relative grid grid-cols-[2.5rem_auto] gap-x-2.5 rounded-xl border border-transparent bg-btn p-2.5 transition-colors [grid-template-areas:'icon_name''icon_desc'] hover:border-btn-hover"
+	class="skill-tag group relative grid grid-cols-[2.5rem_auto] gap-x-2.5 rounded-xl border border-transparent bg-btn p-2.5 transition-colors [grid-template-areas:'icon_name''icon_desc'] hover:border-btn-hover"
 >
 	<Icon className="[grid-area:icon]" name={name.replace(' ', '')} />
 	<div class="h-6 overflow-hidden text-nowrap text-ellipsis capitalize [grid-area:name]">
@@ -19,6 +19,8 @@
 		{desc}
 	</div>
 	{#if isStarred}
-		<FaIcon name="star" className="size-6 absolute top-2.5 right-2.5" />
+		<div class="absolute top-2.5 right-2.5 hidden md:block">
+			<FaIcon name="star" className="size-6" />
+		</div>
 	{/if}
 </article>

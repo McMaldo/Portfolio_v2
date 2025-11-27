@@ -6,13 +6,13 @@
 
 <section
 	id="projects"
-	class="relative flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-6"
+	class="relative flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
 	<h2>My Projects</h2>
 	<ProjectsFilter />
-	<div class="grid grid-cols-2 gap-4">
+	<div class="grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fit,minmax(340px,1fr))]">
 		{#each $filteredProjects as project (project.name)}
-			<ProjectCard {project} />
+			<ProjectCard {...project} />
 		{/each}
 	</div>
 </section>

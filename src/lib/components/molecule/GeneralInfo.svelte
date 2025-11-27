@@ -16,7 +16,9 @@
 	const textClass = 'overflow-hidden text-ellipsis ';
 </script>
 
-<section class="flex flex-col gap-4 rounded-2xl border border-main-md p-6">
+<section
+	class="hidden flex-col gap-4 rounded-2xl border border-main-md p-4 [grid-area:general] sm:flex lg:p-6"
+>
 	{#each contacts as { icon, name, desc } (icon)}
 		<article
 			class="group grid grid-cols-[3.5rem_auto] items-center gap-x-2.5 gap-y-0 overflow-hidden rounded-xl border border-transparent transition-colors [grid-template-areas:'icon_name''icon_desc'] hover:border-btn-hover"

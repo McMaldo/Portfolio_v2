@@ -8,7 +8,8 @@
 	import Skills from '$lib/components/organism/Skills.svelte';
 </script>
 
-<main class="relative flex size-full flex-col gap-4 lg:gap-6 xl:gap-8">
+<Aside />
+<main class="flex size-full flex-col gap-4 lg:relative lg:gap-6 xl:gap-8">
 	<Nav />
 	<Heading />
 	<Skills />
@@ -16,4 +17,3 @@
 	<About />
 	<Footer />
 </main>
-<Aside />

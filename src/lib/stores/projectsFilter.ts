@@ -1,8 +1,8 @@
 import { writable, derived } from 'svelte/store';
-import type { projectCard } from '../types/projectCard';
+import type { ProjectCard } from '../types/projectCard';
 
 export const filter = writable('');
-export const projects = writable<projectCard[]>([
+export const projects = writable<ProjectCard[]>([
 	{
 		img: 'kiwi_tt',
 		name: 'Kiwi TT',

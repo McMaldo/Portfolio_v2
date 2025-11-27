@@ -1,15 +1,11 @@
 <script lang="ts">
-	import type { link } from '$lib/types/link';
+	import type { EducationTag } from '$lib/types/educationTag';
 
 	let {
 		title = 'Titulo',
 		logo = 'uba',
 		comp = { name: 'Institute', href: '' }
-	} = $props<{
-		title?: string;
-		logo: string;
-		comp: link;
-	}>();
+	} = $props<EducationTag>();
 </script>
 
 <article

@@ -29,7 +29,7 @@
 			{/each}
 		</div>
 	{:else}
-		<div class="grid grid-cols-4 gap-4">
+		<div class="grid grid-cols-[repeat(auto-fit,minmax(145px,1fr))] gap-4">
 			{#each skills as skill (skill.name)}
 				<SkillTag {...skill} />
 			{/each}

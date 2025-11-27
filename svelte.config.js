@@ -8,6 +8,7 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [vitePreprocess(), mdsvex()],
 	kit: { adapter: adapter() },
+	compilerOptions: { runes: true },
 	extensions: ['.svelte', '.svx']
 };
 

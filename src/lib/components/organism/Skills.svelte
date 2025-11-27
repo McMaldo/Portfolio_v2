@@ -42,7 +42,9 @@
 				{ en: 'React Custom Hooks', es: 'React Hooks Personalizados' },
 				{ en: 'MVC Architecture', es: 'Arquitectura MVC' },
 				{ en: 'Client-server Architecture', es: 'Arquitectura Cliente-Servidor' },
-				{ en: 'Responsive Design', es: 'Diseño Responsive' }
+				{ en: 'Responsive Design', es: 'Diseño Responsive' },
+				{ en: 'Design Systems w/Figma', es: 'Sistemas de Diseño c/Figma' },
+				{ en: 'Atom Design', es: 'Diseño Atómico' }
 			]
 		},
 		{
@@ -62,7 +64,10 @@
 	];
 </script>
 
-<section id="skills" class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-6">
+<section
+	id="skills"
+	class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
+>
 	<h2>My Skills</h2>
 	{#each skills as cat (cat.catName)}
 		<SkillsGroup {...cat} />

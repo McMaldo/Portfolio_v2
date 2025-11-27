@@ -77,7 +77,6 @@
 	font-family: Ubuntu;
 }
 h1 {
-	font-size: 4rem;
 	font-weight: 600;
 }
 h1,
@@ -94,6 +93,9 @@ h3 {
 }
 .fa-icon {
 	fill: var(--color-icon);
+}
+#skills .skill-tag .fa-icon {
+	fill: var(--color-main-sm);
 }
 
 ::selection {

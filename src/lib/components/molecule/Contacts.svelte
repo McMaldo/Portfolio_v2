@@ -8,7 +8,9 @@
 	];
 </script>
 
-<section class="grid grid-cols-4 gap-4 rounded-2xl border border-main-md p-6">
+<section
+	class="grid grid-rows-4 gap-4 rounded-2xl border border-main-md p-4 [grid-area:contacts] sm:grid-cols-4 sm:grid-rows-1 lg:p-6"
+>
 	{#each contacts as { icon, href } (icon)}
 		<IconButton {icon} {href} size="auto" />
 	{/each}

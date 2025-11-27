@@ -67,7 +67,7 @@
 </script>
 
 <svg
-	class={`${name} inline-block ${size} rounded-lg bg-bg transition-colors select-none ${color(name)} ${className}`}
+	class={`tech-icon ${name} inline-block ${size} rounded-lg bg-bg transition-colors select-none ${color(name)} ${className}`}
 	aria-hidden="true"
 >
 	<use xlink:href={`/icon/techIcons.svg#${name}`}></use>

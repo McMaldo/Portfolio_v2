@@ -1,7 +1,7 @@
-import type { strMultiLang } from '$lib/types/strMultiLang';
+import type { strMultiLang } from './strMultiLang';
 import type { link } from './link';
 
-export interface projectCard {
+export interface ProjectCard {
 	img: string;
 	name: string;
 	techs: string[];
