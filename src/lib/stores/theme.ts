@@ -14,7 +14,6 @@ if (browser) {
 	// Actualizar cuando cambie el store
 	theme.subscribe((value) => {
 		localStorage.setItem('theme', value);
-		console.log('themeChanged: ' + value);
 		document.documentElement.setAttribute('data-theme', value);
 	});
 }

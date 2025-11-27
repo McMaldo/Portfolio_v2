@@ -6,14 +6,10 @@
 		'React',
 		'Tailwind CSS',
 		'Java Script',
-		'Figma',
 		'Express JS',
 		'PHP',
 		'MySQL',
-		'CSS',
-		'MaterialUI',
-		'Antd',
-		'Node JS'
+		'CSS'
 	];
 
 	let isFilterOpened: boolean = $state(false);

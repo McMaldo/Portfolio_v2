@@ -15,6 +15,7 @@
 					href: 'https://tecnica3.com.ar/'
 				},
 				title: 'Tecnicatura en Programación Personal y Profesional',
+				date: '2018 - 2024',
 				pdf: 'titulo_educativo_TÉCNICO_EN_INFORMÁTICA_PERSONAL_Y_PROFESIONAL'
 			},
 
@@ -26,7 +27,7 @@
 					href: 'https://www.uba.ar/'
 				},
 				title: 'Licenciatura en Ciencia de la Computación',
-				pdf: undefined
+				date: '2025 - act.'
 			}
 		],
 		certificates: [
@@ -37,6 +38,7 @@
 					href: 'https://www.hackerrank.com/skills-verification/javascript_basic'
 				},
 				title: 'JavaScript (Basic) Certificate',
+				date: '2025',
 				pdf: 'hackerrack_js_basic_certificate'
 			},
 
@@ -47,6 +49,7 @@
 					href: 'https://www.hackerrank.com/skills-verification/css'
 				},
 				title: 'CSS (Basic) Certificate',
+				date: '2025',
 				pdf: 'hackerrack_css_basic_certificate'
 			},
 
@@ -57,6 +60,7 @@
 					href: 'https://cfp401.edu.ar/'
 				},
 				title: 'Pensamiento Computacional - Programación',
+				date: '2024',
 				pdf: 'CFP401_PensamientoComputacional-Programacion'
 			},
 
@@ -67,6 +71,7 @@
 					href: 'https://cfp401.edu.ar/'
 				},
 				title: 'Robotica y Automatización',
+				date: '2024',
 				pdf: 'CFP401_RoboticayAutomatizacion'
 			},
 
@@ -77,6 +82,7 @@
 					href: 'https://cfp401.edu.ar/'
 				},
 				title: 'Diseño y Fabricación Digital',
+				date: '2024',
 				pdf: 'CFP401_DisenoyFabricacionDigitial'
 			},
 
@@ -87,6 +93,7 @@
 					href: 'https://www.netacad.com/courses/linux-unhatched?courseLang=en-US'
 				},
 				title: 'NDG Linux Unhatched',
+				date: '2023',
 				pdf: 'cisco_netacad_shellscript'
 			}
 		]
@@ -112,10 +119,19 @@
 				otras.
 			</p>
 		</div>
-		<div class="w-fill flex min-w-60 flex-1 flex-col gap-4 overflow-hidden overflow-y-scroll">
-			<div class="flex w-fit gap-2 rounded-xl border border-main-sm p-2">
+		<div
+			class="custom-scroll w-fill relative flex min-w-60 flex-1 flex-col gap-4 overflow-hidden overflow-y-scroll sm:max-h-60"
+		>
+			<div
+				class="sticky top-0 grid w-fit grid-cols-2 gap-2 rounded-xl border border-main-sm bg-bg p-2"
+			>
 				<Button name="Education" size="sm" fn={() => (sectionOpened = 'education')} />
 				<Button name="Certificates" size="sm" fn={() => (sectionOpened = 'certificates')} />
+				<div
+					class={`absolute bottom-0 left-0 h-1 w-1/2 px-4 transition-transform ${sectionOpened == 'certificates' ? 'translate-x-full' : ''}`}
+				>
+					<div class="w-fill h-1 rounded-t-full bg-main-sm"></div>
+				</div>
 			</div>
 			{#each sectionOpened == 'education' ? titles.education : titles.certificates as eduTag (eduTag.title)}
 				<EduTag {...eduTag} />

@@ -6,5 +6,6 @@ export interface EducationTag {
 	logo: string;
 	comp: link;
 	title: string;
-	pdf: string;
+	date?: string;
+	pdf?: string;
 }
