@@ -8,7 +8,7 @@ export const projects = writable<ProjectCard[]>([
 		name: 'Kiwi TT',
 		techs: ['React', 'JavaScript', 'CSS', 'MaterialUI', 'Antd', 'MySQL'],
 		desc: {
-			en: 'Allows you to administrate a work team through the agile metodology SCRUM, distributing tasks with differents priorities & submission deadlines',
+			en: 'Allows you to administrate a work team through the agile methodology SCRUM, distributing tasks with different priorities & submission deadlines',
 			es: 'Permite administrar a un grupo de trabajo mediante la metodología agil SCRUM, designando tareas con distintas prioridades y plazos de entrega.'
 		},
 		links: [{ name: 'github', href: 'https://github.com/Kiwi-jsx/KiwiTT_app' }],
