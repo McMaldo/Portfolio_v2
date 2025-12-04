@@ -1,6 +1,7 @@
 <script>
 	import About from '$lib/components/organism/About.svelte';
 	import Aside from '$lib/components/organism/Aside.svelte';
+	import Experience from '$lib/components/organism/Experience.svelte';
 	import Footer from '$lib/components/organism/Footer.svelte';
 	import Heading from '$lib/components/organism/Heading.svelte';
 	import Nav from '$lib/components/organism/Nav.svelte';
@@ -15,5 +16,6 @@
 	<Skills />
 	<Projects />
 	<About />
+	<Experience />
 	<Footer />
 </main>

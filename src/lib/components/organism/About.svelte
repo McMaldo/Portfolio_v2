@@ -123,7 +123,7 @@
 			class="custom-scroll w-fill relative flex min-w-60 flex-1 flex-col gap-4 overflow-hidden overflow-y-scroll sm:max-h-60"
 		>
 			<div
-				class="sticky top-0 grid w-fit grid-cols-2 gap-2 rounded-xl border border-main-sm bg-bg p-2"
+				class="sticky top-0 grid w-fit grid-cols-2 gap-2 rounded-xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg"
 			>
 				<Button name="Education" size="sm" fn={() => (sectionOpened = 'education')} />
 				<Button name="Certificates" size="sm" fn={() => (sectionOpened = 'certificates')} />

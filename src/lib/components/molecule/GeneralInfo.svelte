@@ -17,7 +17,7 @@
 </script>
 
 <section
-	class="hidden flex-col gap-4 rounded-2xl border border-main-md p-4 [grid-area:general] sm:flex lg:p-6"
+	class="hidden flex-col gap-4 rounded-2xl border border-main-sm p-4 [grid-area:general] sm:flex lg:p-6"
 >
 	{#each contacts as { icon, name, desc } (icon)}
 		<article
