@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { EducationTag } from '$lib/types/educationTag';
+	import { lang } from '$lib/stores/language';
 	import Button from '../atom/Button.svelte';
 	import EduTag from '../molecule/EduTag.svelte';
 	let titles: {
@@ -8,7 +9,6 @@
 	} = {
 		education: [
 			{
-				lvl: { en: 'High School', es: 'Secundaria' },
 				logo: 'RobertoArlt',
 				comp: {
 					name: 'Técnica N°3, Malvinas Argentinas, Buenos Aires, Argentina',
@@ -20,7 +20,6 @@
 			},
 
 			{
-				lvl: { en: 'College', es: 'Universidad' },
 				logo: 'uba',
 				comp: {
 					name: 'Universidad de Buenos Aires, Argentina',
@@ -106,18 +105,33 @@
 	<h2>About Me</h2>
 	<div class="flex flex-wrap gap-4">
 		<div class="w-fill min-w-60 indent-4 text-sm sm:max-w-70">
-			<p>
-				Maldonado Ignacio, también conocido como Maldo. Técnico en Informática Personal y
-				Profesional, programando desde los 15 años.
-			</p>
-			<p>
-				Gran afinidad por el Desarrollo Front-end y el Diseño Web, complementada con amplia práctica
-				en Back-end y Bases de Datos para aplicaciones web.
-			</p>
-			<p>
-				Actualmente enfocado en React JS y sus múltiples librerías, como MUI, AntD, RRD, entre
-				otras.
-			</p>
+			{#if $lang == 'es'}
+				<p>
+					Maldonado Ignacio, también conocido como Maldo. Técnico en Informática Personal y
+					Profesional, programando desde los 15 años.
+				</p>
+				<p>
+					Focalizado en el Desarrollo Front-end y el Diseño Web, complementado con práctica en
+					Back-end y Bases de Datos.
+				</p>
+				<p>
+					Actualmente enfocado en React TS con Tailwind CSS y RRD para trabajo Freelance, y Svelte
+					para proyectos personales.
+				</p>
+			{:else}
+				<p>
+					Maldonado Ignacio, also known as Maldo. Personal & Professional IT Technician, programming
+					since the age of 15.
+				</p>
+				<p>
+					Main interest is Front-end Development and Web Design, as well as considerable experience
+					in Back-end and Database.
+				</p>
+				<p>
+					Currently focused on React TS, along with Tailwind CSS & RRD for freelance work & Svelte
+					for personal projects and others.
+				</p>
+			{/if}
 		</div>
 		<div
 			class="custom-scroll w-fill relative flex min-w-60 flex-1 flex-col gap-4 overflow-hidden overflow-y-scroll sm:max-h-60"
@@ -125,8 +139,16 @@
 			<div
 				class="sticky top-0 grid w-fit grid-cols-2 gap-2 rounded-xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg"
 			>
-				<Button name="Education" size="sm" fn={() => (sectionOpened = 'education')} />
-				<Button name="Certificates" size="sm" fn={() => (sectionOpened = 'certificates')} />
+				<Button
+					name={$lang == 'es' ? 'Educación' : 'Education'}
+					size="sm"
+					fn={() => (sectionOpened = 'education')}
+				/>
+				<Button
+					name={$lang == 'es' ? 'Certificados' : 'Certificates'}
+					size="sm"
+					fn={() => (sectionOpened = 'certificates')}
+				/>
 				<div
 					class={`absolute bottom-0 left-0 h-1 w-1/2 px-4 transition-transform ${sectionOpened == 'certificates' ? 'translate-x-full' : ''}`}
 				>

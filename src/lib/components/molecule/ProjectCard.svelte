@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ProjectCard } from '$lib/types/projectCard';
+	import { lang } from '$lib/stores/language';
 	import FaIcon from '../atom/FaIcon.svelte';
 	import IconButton from '../atom/IconButton.svelte';
 	import Link from '../atom/Link.svelte';
@@ -24,7 +25,7 @@
 			</div>
 		{/if}
 		<h3 class="text-2xl">{project.name}</h3>
-		<p class="indent-4 text-font-light">{project.desc.en}</p>
+		<p class="indent-4 text-font-light">{$lang == 'es' ? project.desc.es : project.desc.en}</p>
 	</div>
 	<div class="flex flex-col gap-2.5 [grid-area:tech]">
 		{#each project.techs as tech (tech)}
@@ -37,6 +38,6 @@
 		{#each project.links as { name, href } (name)}
 			<IconButton {href} icon={name} size="sm" dark={true} />
 		{/each}
-		<Link href={project.demo} name="Go to Demo" className="flex-1" />
+		<Link href={project.demo} name={$lang == 'es' ? 'Ver Demo' : 'Go to Demo'} className="flex-1" />
 	</div>
 </article>

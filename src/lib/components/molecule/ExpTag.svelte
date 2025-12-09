@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ExperienceTag } from '$lib/types/experienceTag';
+	import { lang } from '$lib/stores/language';
 
 	let { name, company, date, desc }: ExperienceTag = $props();
 </script>
@@ -11,7 +12,7 @@
 		<div class="aspect-square size-6 rounded-full border-4 border-main-sm"></div>
 	</div>
 	<div class="overflow-hidden text-2xl text-nowrap text-ellipsis capitalize [grid-area:name]">
-		{name.es}
+		{$lang == 'es' ? name.es : name.en}
 	</div>
 	<div
 		class="flex h-5 gap-1 overflow-hidden text-sm text-nowrap text-ellipsis text-font-light [grid-area:comp]"
@@ -20,7 +21,7 @@
 	</div>
 	<div class="pt-4 indent-4 text-sm text-font-light [grid-area:desc]">
 		{#each desc as paragraph, index (index)}
-			<p>{paragraph.es}</p>
+			<p>{$lang == 'es' ? paragraph.es : paragraph.en}</p>
 		{/each}
 	</div>
 </article>

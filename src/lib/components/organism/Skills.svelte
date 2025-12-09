@@ -1,13 +1,15 @@
 <script lang="ts">
 	import type { strMultiLang } from '$lib/types/strMultiLang';
 	import type { skillTag } from '$lib/types/skillTag';
+	import { lang } from '$lib/stores/language';
 	import SkillsGroup from '../molecule/SkillsGroup.svelte';
+
 	const skills: {
 		catName: strMultiLang;
 		skills: skillTag[] | strMultiLang[];
 	}[] = [
 		{
-			catName: { en: 'Front-end', es: 'Front-end y Diseño' },
+			catName: { en: 'Front-end', es: 'Front-end' },
 			skills: [
 				{ name: 'React', desc: 'JS Library', isStarred: true },
 				{ name: 'Tailwind CSS', desc: 'CSS Library', isStarred: true },
@@ -16,7 +18,7 @@
 			]
 		},
 		{
-			catName: { en: 'Back-end', es: 'Back-end y Bases de Datos' },
+			catName: { en: 'Back-end', es: 'Back-end' },
 			skills: [
 				{ name: 'Express JS', desc: 'Node JS Library' },
 				{ name: 'PHP', desc: 'Programming Lang.' },
@@ -25,7 +27,7 @@
 			]
 		},
 		{
-			catName: { en: 'General', es: 'Herramientas de Programación' },
+			catName: { en: 'General', es: 'General' },
 			skills: [
 				{ name: 'Git', desc: 'Version Control' },
 				{ name: 'Vercel', desc: 'Web Deployment' },
@@ -34,7 +36,7 @@
 			]
 		},
 		{
-			catName: { en: 'Concepts', es: 'Conceptos de Programación' },
+			catName: { en: 'Concepts', es: 'Conceptos' },
 			skills: [
 				{ en: 'SCRUM', es: 'SCRUM' },
 				{ en: 'OOP', es: 'POO' },
@@ -68,7 +70,7 @@
 	id="skills"
 	class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
-	<h2>My Skills</h2>
+	<h2>{$lang == 'es' ? 'Mis Habilidades' : 'My Skills'}</h2>
 	{#each skills as cat (cat.catName)}
 		<SkillsGroup {...cat} />
 	{/each}

@@ -4,7 +4,6 @@
 	import { theme } from '$lib/stores/theme';
 	import type { Theme } from '$lib/stores/theme';
 	import FaIcon from '../atom/FaIcon.svelte';
-	import { writable } from 'svelte/store';
 
 	let body;
 
