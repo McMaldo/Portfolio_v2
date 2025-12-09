@@ -35,10 +35,13 @@
 </script>
 
 <footer
-	class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm bg-[url(/img/footerWave.svg)] bg-cover bg-center bg-no-repeat p-4 lg:p-6"
+	class="relative flex w-full flex-col gap-4 overflow-hidden rounded-2xl border border-main-sm p-4 lg:p-6"
 >
+	<svg class="absolute size-full" aria-hidden="true">
+		<use xlink:href="/img/wave.svg#footerWave"></use>
+	</svg>
 	<section
-		class="flex h-full flex-wrap gap-4 lg:grid lg:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]"
+		class="z-2 flex h-full flex-wrap gap-4 lg:grid lg:grid-cols-[repeat(auto-fit,minmax(250px,1fr))]"
 	>
 		<article class="flex min-h-full flex-col justify-between">
 			<div>
@@ -84,21 +87,22 @@
 		</article>
 	</section>
 	<section
-		class="flex justify-between rounded-xl border border-main-sm bg-bg p-2.5 pb-0 text-lg text-icon"
+		class="z-2 flex justify-between rounded-xl border border-main-sm bg-bg p-2.5 pb-0 text-lg text-icon"
 	>
 		<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="flex gap-1">
-			<svg class="inline-block size-8 select-none">
+			<svg class="fa-icon inline-block size-8 select-none">
 				<use xlink:href="/icon/faLicense.svg#creative-commons"></use>
 			</svg>
 			<div class="flex flex-col gap-1">
 				<div class="flex gap-1">
 					{#each license as cc (cc)}
-						<svg class="inline-block size-5 select-none">
+						<svg class="fa-icon inline-block size-5 select-none">
 							<use xlink:href={`/icon/faLicense.svg#creative-commons${cc}`}></use>
 						</svg>
 					{/each}
 				</div>
-				<span class="w-fill rounded-t-lg bg-main-sm text-center text-xs">License</span>
+				<span class="w-fill rounded-t-lg bg-main-sm text-center text-xs text-gray-100">License</span
+				>
 			</div>
 		</a>
 		<h3>Bs As | Arg</h3>

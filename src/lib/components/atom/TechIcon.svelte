@@ -14,7 +14,7 @@
 	name = name.replace(' ', '');
 
 	const color = (name: string) => {
-		if ($theme == 'dark') {
+		if ($theme == 'dark' || $theme == 'mocha') {
 			switch (name) {
 				case 'React':
 				case 'Trello':

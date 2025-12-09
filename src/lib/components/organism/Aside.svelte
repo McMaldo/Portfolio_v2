@@ -12,10 +12,10 @@
 		<div class="aspect-square w-full rounded-xl bg-btn"></div>
 		<h2 class="text-sm md:text-3xl">McMaldo</h2>
 		<div class="hidden rounded-xl bg-btn p-1.5 lg:block">Web Developer</div>
-		<div class="hidden grid-cols-2 gap-4 lg:grid">
+		<!-- <div class="hidden grid-cols-2 gap-4 lg:grid">
 			<div class="rounded-xl bg-btn p-1.5">Español</div>
 			<div class="rounded-xl bg-btn p-1.5">English</div>
-		</div>
+		</div> -->
 	</section>
 	<GeneralInfo />
 	<Contacts />

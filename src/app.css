@@ -13,7 +13,6 @@
 	--color-btn-hover: #151521;
 	--color-btn-border: #555;
 }
-
 [data-theme='light'] {
 	--color-main: #6e2be2;
 	--color-main-md: #8e4ef5;
@@ -28,18 +27,33 @@
 	--color-btn-hover: #ddd;
 	--color-btn-border: #cccccc;
 }
+[data-theme='mocha'] {
+	--color-main: #c776ff;
+	--color-main-md: #915e9f;
+	--color-main-sm: #694b88;
 
-[data-theme='blue'] {
-	--color-main: #2b7de2;
-	--color-main-md: #1a5cb8;
-	--color-main-sm: #154a93;
-	--color-bg: #0a0a0f;
-	--color-font: #fff;
-	--color-font-light: #999;
-	--color-icon: #ccc;
-	--color-btn: #0f0f1a;
-	--color-btn-hover: #1a1a2e;
-	--color-btn-border: #444;
+	--color-bg: #11111b;
+	--color-font: #cdd6f4;
+	--color-font-light: #a6adc8;
+	--color-icon: #bac2de;
+
+	--color-btn: #181825;
+	--color-btn-hover: #1e1e2e;
+	--color-btn-border: #1e1e2e;
+}
+[data-theme='latte'] {
+	--color-main: #8553c6;
+	--color-main-md: #8553c6;
+	--color-main-sm: #c6a0f6;
+
+	--color-bg: #eff1f5;
+	--color-font: #4c4f69;
+	--color-font-light: #6c6f85;
+	--color-icon: #7c7f93;
+
+	--color-btn: #e6e9ef;
+	--color-btn-hover: #dce0e8;
+	--color-btn-border: #bcc0cc;
 }
 
 @font-face {
@@ -98,6 +112,11 @@ h3 {
 	fill: var(--color-main-sm);
 }
 
+#footerWave path,
+#headingWave path {
+	stroke: var(--color-main-sm);
+}
+
 ::selection {
 	background: var(--color-main-sm);
 }
@@ -126,4 +145,16 @@ h3 {
 	background-image:
 		linear-gradient(var(--font-color), var(--font-color)),
 		linear-gradient(90deg, transparent, transparent);
+}
+
+.animate-appear {
+	animation: appearance 0.3s;
+}
+@keyframes appearance {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

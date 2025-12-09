@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-export type Theme = 'dark' | 'light' | 'blue';
+export type Theme = 'dark' | 'light' | 'mocha' | 'latte';
 
 const storedTheme = browser ? (localStorage.getItem('theme') as Theme) || 'dark' : 'dark';
 

@@ -27,11 +27,11 @@
 </script>
 
 <button
-	class={`flex cursor-pointer items-center justify-center gap-1 bg-btn text-nowrap transition-colors select-none hover:bg-btn-hover ${className}`}
+	class={`flex cursor-pointer items-center justify-center gap-2 bg-btn text-nowrap transition-colors select-none hover:bg-btn-hover ${className}`}
 	onclick={fn}
 >
 	{#if icon}
-		<FaIcon name={icon} className={name ? 'size-4' : 'size-6'} />
+		<FaIcon name={icon} className={size == 'sm' ? 'size-4' : 'size-6'} />
 	{/if}
 	{name && name}
 </button>

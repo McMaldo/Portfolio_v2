@@ -54,7 +54,7 @@
 		</div>
 	</section>
 	<section
-		class="fixed right-4 bottom-4 z-1 flex flex-col gap-2 rounded-2xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg transition-colors sm:static sm:flex-row"
+		class="fixed right-4 bottom-4 z-1 flex flex-col gap-2 rounded-2xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg transition-colors sm:relative sm:right-auto sm:bottom-auto sm:flex-row"
 	>
 		<ThemeSelector />
 		<Button icon="share" />
