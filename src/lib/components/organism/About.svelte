@@ -31,6 +31,16 @@
 		],
 		certificates: [
 			{
+				logo: 'BA',
+				comp: {
+					name: 'Talento Tech',
+					href: 'https://talentotech.bue.edu.ar/home'
+				},
+				title: 'UI Design',
+				date: '2025',
+				pdf: 'talento_tech-uidesign-2026_01_22'
+			},
+			{
 				logo: 'HackerRank',
 				comp: {
 					name: 'HackerRank',
