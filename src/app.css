@@ -12,6 +12,72 @@
 	--color-btn: #0b0b12;
 	--color-btn-hover: #151521;
 	--color-btn-border: #555;
+
+	--animate-slide-in: slideInUp 0.4s ease-out forwards;
+	--animate-slide-left: slideInLeft 0.4s ease-out forwards;
+	--animate-slide-right: slideInRight 0.4s ease-out forwards;
+	--animate-slide-down: slideInDown 0.4s ease-out forwards;
+	--animate-fade-in: fadeIn 0.4s ease-out forwards;
+	--animate-scale-in: scaleIn 0.4s ease-out forwards;
+
+	@keyframes slideInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	@keyframes slideInLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+	@keyframes slideInRight {
+		from {
+			opacity: 0;
+			transform: translateX(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+	@keyframes slideInDown {
+		from {
+			opacity: 0;
+			transform: translateY(-30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@keyframes scaleIn {
+		from {
+			opacity: 0;
+			transform: scale(0.95);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
 }
 [data-theme='light'] {
 	--color-main: #6e2be2;
@@ -130,6 +196,7 @@ h3 {
 	background: var(--color-main-sm);
 }
 
+/* ----------------- Custom Scroll ----------------- */
 .custom-scroll {
 	overflow-y: scroll;
 	scrollbar-gutter: auto;
@@ -153,14 +220,12 @@ h3 {
 		linear-gradient(90deg, transparent, transparent);
 }
 
-.animate-appear {
-	animation: appearance 0.3s;
-}
-@keyframes appearance {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+/* ----------------- Animations ----------------- */
+.animate-slide-in,
+.animate-slide-left,
+.animate-slide-right,
+.animate-slide-down,
+.animate-fade-in,
+.animate-scale-in {
+	opacity: 0;
 }

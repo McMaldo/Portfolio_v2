@@ -42,6 +42,26 @@
 			content="Look at my Skills, Projects, Personal Information & Hobbies"
 		/>
 		<meta name="twitter:image" content="https://mcmaldo.vercel.app/img/preview/web.webp" />
+
+		<script>
+			(function () {
+				const validThemes = ['dark', 'light', 'mocha', 'latte'];
+				const fallbackTheme = 'mocha';
+
+				// Obtener tema guardado o preferencia del sistema
+				let theme = localStorage.getItem('theme');
+
+				if (!theme || !validThemes.includes(theme)) {
+					theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+						? 'dark'
+						: fallbackTheme;
+				}
+
+				// Aplica inmediatamente al elemento <html>
+				document.documentElement.setAttribute('data-theme', theme);
+			})();
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body

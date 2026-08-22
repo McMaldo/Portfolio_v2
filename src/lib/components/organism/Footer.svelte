@@ -35,7 +35,7 @@
 </script>
 
 <footer
-	class="relative flex w-full flex-col gap-4 overflow-hidden rounded-2xl border border-main-sm p-4 lg:p-6"
+	class="relative flex w-full animate-slide-left flex-col gap-4 overflow-hidden rounded-2xl border border-main-sm p-4 lg:p-6"
 >
 	<svg class="absolute size-full" aria-hidden="true">
 		<use xlink:href="/img/wave.svg#footerWave"></use>

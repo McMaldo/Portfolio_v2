@@ -37,7 +37,7 @@
 	/>
 	{#if isFilterOpened}
 		<div
-			class="flex flex-col gap-2 rounded-lg border border-main-sm bg-btn p-2 shadow-md shadow-bg"
+			class="flex animate-slide-down flex-col gap-2 rounded-lg border border-main-sm bg-btn p-2 shadow-md shadow-bg"
 		>
 			{#each skills as name, index (name)}
 				<button

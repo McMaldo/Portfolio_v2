@@ -3,15 +3,21 @@ import { browser } from '$app/environment';
 
 export type Theme = 'dark' | 'light' | 'mocha' | 'latte';
 
-const storedTheme = browser ? (localStorage.getItem('theme') as Theme) || 'dark' : 'dark';
+export const themesList: Theme[] = ['dark', 'light', 'mocha', 'latte'];
 
-export const theme = writable<Theme>(storedTheme);
+const getInitialTheme = (): Theme => {
+	if (browser) {
+		const currentAttr = document.documentElement.getAttribute('data-theme') as Theme;
+		if (currentAttr) return currentAttr;
+
+		return (localStorage.getItem('theme') as Theme) || 'dark';
+	}
+	return 'dark';
+};
+
+export const theme = writable<Theme>(getInitialTheme());
 
 if (browser) {
-	// Aplicar tema inicial
-	document.documentElement.setAttribute('data-theme', storedTheme);
-
-	// Actualizar cuando cambie el store
 	theme.subscribe((value) => {
 		localStorage.setItem('theme', value);
 		document.documentElement.setAttribute('data-theme', value);

@@ -68,7 +68,7 @@
 
 <section
 	id="skills"
-	class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
+	class="flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
 	<h2>{$lang == 'es' ? 'Mis Habilidades' : 'My Skills'}</h2>
 	{#each skills as cat (cat.catName)}

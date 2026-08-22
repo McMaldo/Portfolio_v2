@@ -7,7 +7,7 @@
 
 <section
 	id="projects"
-	class="relative flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
+	class="relative flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
 	<h2>{$lang == 'es' ? 'Mis Proyectos' : 'My Projects'}</h2>
 	<ProjectsFilter />

@@ -37,7 +37,9 @@
 	});
 </script>
 
-<nav class="sticky top-4 z-9 flex justify-center sm:justify-between lg:top-6 xl:top-8">
+<nav
+	class="sticky top-4 z-9 flex animate-slide-down justify-center sm:justify-between lg:top-6 xl:top-8"
+>
 	<section
 		class="z-1 rounded-2xl border border-main-sm bg-bg px-2 shadow-lg shadow-bg transition-colors"
 	>

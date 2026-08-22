@@ -101,7 +101,7 @@
 					name: 'Cisco Networking Academy program',
 					href: 'https://www.netacad.com/courses/linux-unhatched?courseLang=en-US'
 				},
-				title: 'NDG Linux Unhatched',
+				title: 'NDG Linux Unhatched (CLI Navigation)',
 				date: '2023',
 				pdf: 'cisco_netacad_shellscript'
 			}
@@ -111,7 +111,10 @@
 	let sectionOpened = $state('education');
 </script>
 
-<section id="about" class="flex w-full flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6">
+<section
+	id="about"
+	class="flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
+>
 	<h2>About Me</h2>
 	<div class="flex flex-wrap gap-4">
 		<div class="w-fill min-w-60 indent-4 text-sm sm:max-w-70">
@@ -150,12 +153,12 @@
 				class="sticky top-0 grid w-fit grid-cols-2 gap-2 rounded-xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg"
 			>
 				<Button
-					name={$lang == 'es' ? 'Educación' : 'Education'}
+					name={`${$lang == 'es' ? 'Educación' : 'Education'} (${titles.education.length})`}
 					size="sm"
 					fn={() => (sectionOpened = 'education')}
 				/>
 				<Button
-					name={$lang == 'es' ? 'Certificados' : 'Certificates'}
+					name={`${$lang == 'es' ? 'Certificados' : 'Certificates'} (${titles.certificates.length})`}
 					size="sm"
 					fn={() => (sectionOpened = 'certificates')}
 				/>
