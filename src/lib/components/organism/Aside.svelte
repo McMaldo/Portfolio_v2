@@ -1,11 +1,7 @@
 <script>
 	import { asset } from '$app/paths';
-	import { theme } from '$lib/stores/theme'; // Ajusta la ruta a tu store
 	import Contacts from '../molecule/Contacts.svelte';
 	import GeneralInfo from '../molecule/GeneralInfo.svelte';
-
-	// Temas que consideramos oscuros
-	const darkThemes = ['dark', 'mocha'];
 </script>
 
 <aside
@@ -14,20 +10,17 @@
 	<section
 		class="flex animate-slide-right flex-col gap-4 rounded-2xl border border-main-sm p-4 text-center [grid-area:top] lg:p-6"
 	>
-		<div class="grid aspect-square w-full overflow-hidden rounded-xl bg-btn p-4">
-			{#if !darkThemes.includes($theme)}
-				<img
-					src={asset('/img/avatar-light.jpg')}
-					alt="Avatar Light"
-					class="size-full animate-slide-right rounded-lg object-cover object-center"
-				/>
-			{:else}
-				<img
-					src={asset('/img/avatar-dark.webp')}
-					alt="Avatar Dark"
-					class="size-full animate-slide-left rounded-lg object-cover object-center"
-				/>
-			{/if}
+		<div class="aspect-square w-full overflow-hidden rounded-xl bg-btn p-4 select-none">
+			<img
+				src={asset('/img/avatar-light.webp')}
+				alt="Avatar"
+				class="size-full animate-slide-right rounded-lg object-cover object-center [html:where([data-theme=dark],[data-theme=mocha])_&]:hidden"
+			/>
+			<img
+				src={asset('/img/avatar-dark.webp')}
+				alt="Avatar"
+				class="hidden size-full animate-slide-right rounded-lg object-cover object-center [html:where([data-theme=dark],[data-theme=mocha])_&]:block"
+			/>
 		</div>
 		<h2 class="text-sm md:text-3xl">McMaldo</h2>
 		<div class="hidden rounded-xl bg-btn p-1.5 lg:block">Web Developer</div>

@@ -20,7 +20,7 @@
 >
 	<button
 		type="button"
-		class="flex aspect-square cursor-pointer items-center justify-center gap-1 rounded-xl bg-btn p-2.5 transition-colors select-none hover:bg-btn-hover"
+		class="flex aspect-square size-11 cursor-pointer items-center justify-center gap-1 rounded-xl bg-btn transition-colors select-none hover:bg-btn-hover"
 		onclick={() => (isThemeSelectorOpened = !isThemeSelectorOpened)}
 		aria-expanded={isThemeSelectorOpened}
 		aria-label="Seleccionar tema"

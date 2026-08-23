@@ -24,7 +24,7 @@
 </script>
 
 <button
-	class="flex aspect-square h-full cursor-pointer items-center justify-center gap-1 rounded-xl bg-btn p-2.5 text-xl font-bold text-icon uppercase transition-colors select-none hover:bg-btn-hover"
+	class="flex aspect-square size-11 h-full cursor-pointer items-center justify-center gap-1 rounded-xl bg-btn text-xl font-bold text-icon uppercase transition-colors select-none hover:bg-btn-hover"
 	onclick={() => toggleLang()}
 >
 	{$lang}

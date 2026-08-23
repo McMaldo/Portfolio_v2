@@ -13,7 +13,7 @@
 	<ProjectsFilter />
 	<div class="grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fit,minmax(340px,1fr))]">
 		{#each $filteredProjects as project (project.name)}
-			<ProjectCard {...project} />
+			<ProjectCard {project} />
 		{/each}
 	</div>
 </section>

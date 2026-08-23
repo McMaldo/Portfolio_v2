@@ -37,11 +37,9 @@
 	});
 </script>
 
-<nav
-	class="sticky top-4 z-9 flex animate-slide-down justify-center sm:justify-between lg:top-6 xl:top-8"
->
+<nav class="sticky top-4 z-10 flex justify-center sm:justify-between lg:top-6 xl:top-8">
 	<section
-		class="z-1 rounded-2xl border border-main-sm bg-bg px-2 shadow-lg shadow-bg transition-colors"
+		class="z-10 animate-slide-left rounded-2xl border border-main-sm bg-bg px-2 shadow-lg shadow-bg transition-colors lg:animate-slide-down"
 	>
 		<div class="relative grid grid-cols-3 gap-2 py-2">
 			{#each sections as { id, name } (id)}
@@ -51,14 +49,20 @@
 				/>
 			{/each}
 			<div
-				class={`absolute bottom-0 left-0 h-1 w-1/3 px-4 transition-transform ${activeSection == 'projects' ? 'translate-x-full' : activeSection == 'about' ? 'translate-x-2/1' : ''}`}
+				class={`absolute bottom-0 left-0 h-1 w-1/3 px-4 transition-transform ${
+					activeSection === 'projects'
+						? 'translate-x-full'
+						: activeSection === 'about'
+							? 'translate-x-2/1'
+							: 'translate-x-0'
+				}`}
 			>
-				<div class="w-fill h-1 rounded-t-full bg-main-sm"></div>
+				<div class="h-1 w-full rounded-t-full bg-main-sm"></div>
 			</div>
 		</div>
 	</section>
 	<section
-		class="fixed right-4 bottom-4 z-1 flex flex-col gap-2 rounded-2xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg transition-colors sm:relative sm:right-auto sm:bottom-auto sm:flex-row"
+		class="fixed right-4 bottom-4 z-10 flex animate-slide-right flex-col gap-2 rounded-2xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg transition-all sm:relative sm:right-auto sm:bottom-auto sm:flex-row lg:animate-slide-down"
 	>
 		<ToggleLang />
 		<ThemeSelector />

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset } from '$app/paths';
 	import type { ProjectCard } from '$lib/types/projectCard';
 	import { lang } from '$lib/stores/language';
 	import FaIcon from '../atom/FaIcon.svelte';
@@ -6,16 +7,16 @@
 	import Link from '../atom/Link.svelte';
 	import TechIcon from '../atom/TechIcon.svelte';
 
-	let project = $props<ProjectCard>();
+	let { project }: { project: ProjectCard } = $props();
 </script>
 
 <article
-	class="grid grid-cols-[auto_min-content] gap-2.5 rounded-xl border border-transparent bg-btn p-2.5 transition-colors [grid-template-areas:'main_tech''link_link'] hover:border-btn-hover"
+	class="grid animate-fade-in grid-cols-[auto_min-content] gap-2.5 rounded-xl border border-transparent bg-btn p-2.5 transition-colors [grid-template-areas:'main_tech''link_link'] hover:border-btn-hover"
 >
 	<div class="flex flex-col gap-2.5 [grid-area:main]">
 		{#if project.img}
 			<img
-				src={`/img/project/${project.img}.webp`}
+				src={asset(`/img/project/${project.img}.webp`)}
 				alt=""
 				class="w-fill aspect-video rounded-lg bg-bg"
 			/>
