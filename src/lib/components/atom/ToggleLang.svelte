@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import { lang } from '$lib/stores/language';
 
-	let doc;
+	let doc: HTMLHtmlElement | null = null;
 
 	function switchLang() {
 		if (browser && doc) {
