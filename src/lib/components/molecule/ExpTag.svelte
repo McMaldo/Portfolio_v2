@@ -6,10 +6,13 @@
 </script>
 
 <article
-	class="exp-tag group relative grid grid-cols-[2.5rem_auto] gap-x-2.5 [grid-template-areas:'icon_comp''icon_name''void_desc']"
+	class="exp-tag group relative z-10 grid grid-cols-[2.5rem_auto] gap-x-2.5 [grid-template-areas:'icon_comp''icon_name''void_desc']"
 >
 	<div class="grid place-items-center [grid-area:icon]">
-		<div class="aspect-square size-6 rounded-full border-4 border-main-sm"></div>
+		<div
+			class={'relative z-10 aspect-square size-6 rounded-full border-3 border-main-sm transition-colors duration-300 ' +
+				(date.includes('Present') ? 'bg-main-sm' : 'bg-bg')}
+		></div>
 	</div>
 	<div class="overflow-hidden text-2xl text-nowrap text-ellipsis capitalize [grid-area:name]">
 		{$lang == 'es' ? name.es : name.en}

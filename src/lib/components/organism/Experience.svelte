@@ -122,7 +122,11 @@
 	class="flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
 	<h2>{$lang == 'es' ? 'Experiencia' : 'Experience'}</h2>
-	<div class="grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fit,minmax(340px,1fr))]">
+	<div class="relative flex flex-col gap-8 py-1">
+		<div
+			class="absolute top-6 bottom-1 left-5 z-0 -translate-x-1/2 border-2 border-main-sm"
+			aria-hidden="true"
+		></div>
 		{#each experience as exp (exp.name)}
 			<ExpTag {...exp} />
 		{/each}
