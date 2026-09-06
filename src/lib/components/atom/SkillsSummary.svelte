@@ -1,7 +1,7 @@
 <script lang="ts">
 	import FaIcon from './FaIcon.svelte';
 	import type { strMultiLang } from '$lib/types/strMultiLang';
-	import { lang } from '$lib/stores/language';
+	import { isEnglish } from '$lib/stores/language';
 
 	let { catName, isOpened } = $props<{
 		catName: strMultiLang;
@@ -18,5 +18,5 @@
 		name="caret-right"
 		className={'size-5 transition-transform ' + (isExtended ? 'rotate-90' : '')}
 	/>
-	<h3>{$lang == 'en' ? catName.en : catName.es}</h3>
+	<h3>{$isEnglish ? catName.en : catName.es}</h3>
 </summary>

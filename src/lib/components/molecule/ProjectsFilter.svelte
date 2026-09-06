@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { filter } from '../../stores/projectsFilter.js';
-	import { lang } from '$lib/stores/language.js';
+	import { isEnglish } from '$lib/stores/language.js';
 	import Button from '../atom/Button.svelte';
 	import TechIcon from '../atom/TechIcon.svelte';
 	const skills: string[] = [
@@ -31,7 +31,7 @@
 >
 	<Button
 		icon="filter"
-		name={$lang == 'es' ? 'Filtrar' : 'Filter'}
+		name={$isEnglish ? 'Filter' : 'Filtrar'}
 		size="sm"
 		fn={() => (isFilterOpened = !isFilterOpened)}
 	/>
@@ -57,7 +57,7 @@
 				onclick={() => clearFilter()}
 				class="flex h-8 cursor-pointer items-center justify-center rounded-md transition-colors select-none hover:bg-btn-hover"
 			>
-				{$lang == 'es' ? 'Borrar Filtro' : 'Clear Filter'}
+				{$isEnglish ? 'Clear Filter' : 'Borrar Filtro'}
 			</button>
 		</div>
 	{/if}

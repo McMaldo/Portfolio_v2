@@ -26,7 +26,7 @@
 				<div
 					class="rounded-xl border border-transparent bg-btn px-4 py-2 transition-colors select-none hover:border-btn-hover"
 				>
-					{isEnglish ? skill.en : skill.es}
+					{$isEnglish ? skill.en : skill.es}
 				</div>
 			{/each}
 		</div>

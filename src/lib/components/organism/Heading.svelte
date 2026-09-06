@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '../atom/Button.svelte';
-	import { lang } from '$lib/stores/language';
+	import { isEnglish } from '$lib/stores/language';
 </script>
 
 <section
@@ -12,12 +12,12 @@
 		</svg>
 	</div>
 	<h1 class="z-4 text-center text-5xl lg:text-6xl">
-		{$lang == 'es' ? 'Desarrollador Web' : 'Web Developer'}
+		{$isEnglish ? 'Web Developer' : 'Desarrollador Web'}
 	</h1>
 	<div class="z-4 flex gap-4">
 		<a href="/docs/cv.pdf" target="_blank" class="group relative inline-flex">
 			<Button
-				name={$lang == 'es' ? 'Descargar CV' : 'Download CV'}
+				name={$isEnglish ? 'Download CV' : 'Descargar CV'}
 				icon="download"
 				className="border border-main-sm"
 			/>
@@ -29,7 +29,7 @@
 		</a>
 		<a href="mailto:maldonado.ignacio.pablo@gmail.com">
 			<Button
-				name={$lang == 'es' ? 'Contactame' : 'Get in Touch'}
+				name={$isEnglish ? 'Get in Touch' : 'Contactame'}
 				icon="envelope"
 				className="border border-main-sm"
 			/>

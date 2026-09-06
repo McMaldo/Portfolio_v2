@@ -3,7 +3,7 @@
 	import ToggleLang from '../atom/ToggleLang.svelte';
 	import ThemeSelector from '../molecule/ThemeSelector.svelte';
 	import { onMount } from 'svelte';
-	import { lang } from '$lib/stores/language';
+	import { isEnglish } from '$lib/stores/language';
 
 	const sections = [
 		{ id: 'skills', name: { es: 'Habilidades', en: 'My Skills' } },
@@ -44,7 +44,7 @@
 		<div class="relative grid grid-cols-3 gap-2 py-2">
 			{#each sections as { id, name } (id)}
 				<Button
-					name={$lang == 'es' ? name.es : name.en}
+					name={$isEnglish ? name.en : name.es}
 					fn={() => document.querySelector('#' + id)?.scrollIntoView({ behavior: 'smooth' })}
 				/>
 			{/each}

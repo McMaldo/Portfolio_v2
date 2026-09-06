@@ -1,6 +1,6 @@
 <script lang="ts">
 	import FaIcon from './FaIcon.svelte';
-	import { lang } from '$lib/stores/language';
+	import { isEnglish } from '$lib/stores/language';
 
 	let {
 		name = 'Link',
@@ -38,7 +38,7 @@
 		<div
 			class={`w-fill absolute flex h-10 items-center gap-1 bg-bg transition-transform ${isShowingMsg ? 'translate-y-0' : 'translate-y-10'} `}
 		>
-			{$lang == 'es' ? 'Próximamente' : 'Coming Soon'}
+			{$isEnglish ? 'Coming Soon' : 'Próximamente'}
 		</div>
 	</div>
 {/if}

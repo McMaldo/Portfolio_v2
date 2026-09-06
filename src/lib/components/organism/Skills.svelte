@@ -57,7 +57,7 @@
 	id="skills"
 	class="flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
-	<h2>{isEnglish ? 'Mis Habilidades' : 'My Skills'}</h2>
+	<h2>{$isEnglish ? 'Mis Habilidades' : 'My Skills'}</h2>
 	<div
 		class="absolute top-4 right-4 z-2 grid w-fit grid-cols-2 gap-2 rounded-xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg"
 	>
