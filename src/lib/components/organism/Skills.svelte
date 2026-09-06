@@ -1,39 +1,26 @@
 <script lang="ts">
 	import type { strMultiLang } from '$lib/types/strMultiLang';
-	import type { skillTag } from '$lib/types/skillTag';
-	import { lang } from '$lib/stores/language';
+	import { isEnglish } from '$lib/stores/language';
 	import SkillsGroup from '../molecule/SkillsGroup.svelte';
+	import Button from '../atom/Button.svelte';
+	import SkillsTimeLine from '../molecule/SkillsTimeLine.svelte';
 
+	let sectionOpened = $state('main');
 	const skills: {
 		catName: strMultiLang;
-		skills: skillTag[] | strMultiLang[];
+		skills: string[] | strMultiLang[];
 	}[] = [
 		{
 			catName: { en: 'Front-end', es: 'Front-end' },
-			skills: [
-				{ name: 'React', desc: 'JS Library', isStarred: true },
-				{ name: 'Tailwind CSS', desc: 'CSS Library', isStarred: true },
-				{ name: 'Type Script', desc: 'JS Superset' },
-				{ name: 'Figma', desc: 'Design Tool' }
-			]
+			skills: ['react', 'tailwind', 'ts', 'figma']
 		},
 		{
 			catName: { en: 'Back-end', es: 'Back-end' },
-			skills: [
-				{ name: 'Express JS', desc: 'Node JS Library' },
-				{ name: 'PHP', desc: 'Programming Lang.' },
-				{ name: 'Python', desc: 'Programming Lang.' },
-				{ name: 'MySQL', desc: 'RDBMS' }
-			]
+			skills: ['express', 'php', 'python', 'mysql']
 		},
 		{
 			catName: { en: 'General', es: 'General' },
-			skills: [
-				{ name: 'Git', desc: 'Version Control' },
-				{ name: 'Vercel', desc: 'Web Deployment' },
-				{ name: 'Notion', desc: 'Organization & Notes' },
-				{ name: 'Trello', desc: 'Organization' }
-			]
+			skills: ['git', 'vercel', 'notion', 'trello']
 		},
 		{
 			catName: { en: 'Concepts', es: 'Conceptos' },
@@ -70,8 +57,29 @@
 	id="skills"
 	class="flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
-	<h2>{$lang == 'es' ? 'Mis Habilidades' : 'My Skills'}</h2>
-	{#each skills as cat (cat.catName)}
-		<SkillsGroup {...cat} />
-	{/each}
+	<h2>{isEnglish ? 'Mis Habilidades' : 'My Skills'}</h2>
+	<div
+		class="absolute top-4 right-4 z-2 grid w-fit grid-cols-2 gap-2 rounded-xl border border-main-sm bg-bg p-2 shadow-lg shadow-bg"
+	>
+		<Button icon="star" size="sm" fn={() => (sectionOpened = 'main')} title="Main Tech Stack" />
+		<Button
+			icon="timeline"
+			size="sm"
+			fn={() => (sectionOpened = 'timeline')}
+			title="Tech Timeline"
+		/>
+		<div
+			class={`absolute bottom-0 left-0 h-1 w-1/2 px-4 transition-transform ${sectionOpened == 'timeline' ? 'translate-x-full' : ''}`}
+		>
+			<div class="w-fill h-1 rounded-t-full bg-main-sm"></div>
+		</div>
+	</div>
+
+	{#if sectionOpened == 'main'}
+		{#each skills as cat (cat.catName)}
+			<SkillsGroup {...cat} />
+		{/each}
+	{:else}
+		<SkillsTimeLine />
+	{/if}
 </section>

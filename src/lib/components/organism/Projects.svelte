@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { filteredProjects } from '../../stores/projectsFilter.ts';
-	import { lang } from '$lib/stores/language.ts';
+	import { isEnglish } from '$lib/stores/language.ts';
 	import ProjectCard from '../molecule/ProjectCard.svelte';
 	import ProjectsFilter from '../molecule/ProjectsFilter.svelte';
 </script>
@@ -9,7 +9,7 @@
 	id="projects"
 	class="relative flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
-	<h2>{$lang == 'es' ? 'Mis Proyectos' : 'My Projects'}</h2>
+	<h2>{$isEnglish ? 'Mis Proyectos' : 'My Projects'}</h2>
 	<ProjectsFilter />
 	<div class="grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fit,minmax(340px,1fr))]">
 		{#each $filteredProjects as project (project.name)}

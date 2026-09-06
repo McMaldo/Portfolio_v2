@@ -5,12 +5,14 @@
 		name,
 		size = 'md',
 		className = '',
+		title = '',
 		fn
 	} = $props<{
 		icon?: string;
 		name?: string;
 		size?: string;
 		className?: string;
+		title?: string;
 		fn?: () => void | boolean | string;
 	}>();
 
@@ -29,6 +31,7 @@
 <button
 	class={`flex cursor-pointer items-center justify-center gap-2 bg-btn text-nowrap transition-colors select-none hover:bg-btn-hover ${className}`}
 	onclick={fn}
+	{title}
 >
 	{#if icon}
 		<FaIcon name={icon} className={size == 'sm' ? 'size-4' : 'size-6'} />

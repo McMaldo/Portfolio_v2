@@ -23,7 +23,7 @@
 </script>
 
 <div
-	class="absolute top-6 right-6 z-2 flex flex-col items-end gap-2"
+	class="absolute top-4 right-4 z-2 flex flex-col items-end gap-2"
 	role="button"
 	tabindex="0"
 	onmouseenter={() => (isFilterOpened = true)}
