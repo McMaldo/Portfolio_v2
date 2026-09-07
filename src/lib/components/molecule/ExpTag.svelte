@@ -10,7 +10,7 @@
 >
 	<div class="grid place-items-center [grid-area:icon]">
 		<div
-			class={'relative z-10 aspect-square size-6 rounded-full border-3 border-main-sm transition-colors duration-300 ' +
+			class={'relative z-10 aspect-square size-6 rounded-full border border-main-sm transition-colors duration-300 ' +
 				(date.includes('Present') ? 'bg-main-sm' : 'bg-bg')}
 		></div>
 	</div>

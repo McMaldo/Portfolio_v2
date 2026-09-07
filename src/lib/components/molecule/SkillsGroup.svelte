@@ -2,12 +2,12 @@
 	import type { strMultiLang } from '$lib/types/strMultiLang';
 	import SkillTag from './SkillTag.svelte';
 	import SkillsSummary from '../atom/SkillsSummary.svelte';
-	import { skillTagDictionary } from '$lib/utils/skillsList';
+	import { type skillKey } from '$lib/utils/skillsList';
 	import { isEnglish } from '$lib/stores/language';
 
 	let { catName, skills } = $props<{
 		catName: strMultiLang;
-		skills: string[] | strMultiLang[];
+		skills: skillKey[] | strMultiLang[];
 	}>();
 	let isOpened: boolean = catName.en !== 'Concepts' && catName.en !== 'Soft Skills';
 </script>
@@ -17,7 +17,7 @@
 	{#if isOpened}
 		<div class="grid grid-cols-[repeat(auto-fit,minmax(145px,1fr))] gap-4">
 			{#each skills as skill (skill)}
-				<SkillTag {...skillTagDictionary[skill]} />
+				<SkillTag {skill} />
 			{/each}
 		</div>
 	{:else}

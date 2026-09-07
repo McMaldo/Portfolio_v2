@@ -10,7 +10,7 @@
 </script>
 
 <Aside />
-<main class="flex size-full flex-col gap-4 lg:relative lg:gap-6 xl:gap-8">
+<main class="flex size-full min-w-0 flex-col gap-4 lg:relative lg:gap-6 xl:gap-8">
 	<Nav />
 	<Heading />
 	<Skills />

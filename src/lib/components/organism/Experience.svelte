@@ -123,11 +123,9 @@
 >
 	<h2>{$isEnglish ? 'Experience' : 'Experiencia'}</h2>
 	<div class="relative flex flex-col gap-8 py-1">
-		<div
-			class="absolute top-6 bottom-1 left-5 z-0 -translate-x-1/2 border-2 border-main-sm"
-			aria-hidden="true"
-		></div>
-		{#each experience as exp (exp.name)}
+		<div class="absolute top-6 bottom-1 left-5 z-0 w-px bg-main-sm"></div>
+
+		{#each experience as exp (exp.name.es)}
 			<ExpTag {...exp} />
 		{/each}
 	</div>

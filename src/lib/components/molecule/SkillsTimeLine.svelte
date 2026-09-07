@@ -1,17 +1,18 @@
 <script lang="ts">
-	import { skillKeys, skillTagDictionary } from '$lib/utils/skillsList';
-	import type { skillTag } from '$lib/types/skillTag';
+	import { skillKeys, skillTagDictionary, type skillKey } from '$lib/utils/skillsList';
 	import SkillTag from './SkillTag.svelte';
 	import Button from '../atom/Button.svelte';
 	import { onMount } from 'svelte';
+	import { elapsedTime } from '$lib/utils/elapsedTime';
+	import { isEnglish } from '$lib/stores/language';
 
 	let groupedTimeline = $derived.by(() => {
-		const groups: Record<string, skillTag[]> = {};
+		const groups: Record<string, skillKey[]> = {};
 		for (const key of skillKeys) {
 			const skill = skillTagDictionary[key];
 			if (skill?.date) {
 				if (!groups[skill.date]) groups[skill.date] = [];
-				groups[skill.date].push(skill);
+				groups[skill.date].push(key);
 			}
 		}
 		return Object.entries(groups).sort(([dateA], [dateB]) => {
@@ -68,15 +69,16 @@
 		onscroll={updateScrollState}
 		class="scrollbar-hide overflow-x-scroll scroll-smooth"
 	>
-		<div class="inline-flex items-start gap-8 px-4 pt-6">
-			<div class="absolute top-9 h-0.5 w-full bg-main-sm" aria-hidden="true"></div>
+		<div class="inline-grid w-max auto-cols-fr grid-flow-col items-start gap-8 px-4">
+			<div class="absolute top-10.75 h-px w-full bg-main-sm"></div>
 			{#each groupedTimeline as [date, skills] (date)}
-				<div class="relative grid shrink-0 grid-cols-1 gap-4">
-					<div class="z-9 size-6 rounded-full border-2 border-main-sm bg-bg"></div>
+				<div class="relative grid shrink-0 grid-cols-1 gap-2" title={elapsedTime(date, $isEnglish)}>
 					<time class="text-sm font-semibold text-font-light">{date}</time>
+					<div class="z-9 size-6 rounded-full border border-main-sm bg-bg"></div>
+
 					<ul class="grid w-full grid-cols-1 gap-4">
-						{#each skills as skill (skill.name)}
-							<SkillTag {...skill} />
+						{#each skills as skill (skill)}
+							<SkillTag {skill} />
 						{/each}
 					</ul>
 				</div>

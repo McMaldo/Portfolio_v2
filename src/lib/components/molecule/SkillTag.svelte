@@ -1,15 +1,17 @@
 <script lang="ts">
 	import type { skillTag } from '$lib/types/skillTag';
+	import { skillTagDictionary, type skillKey } from '$lib/utils/skillsList';
 	import FaIcon from '../atom/FaIcon.svelte';
-	import Icon from '../atom/TechIcon.svelte';
+	import TechIcon from '../atom/TechIcon.svelte';
 
-	let { name = 'Svelte', desc = 'JS Framework', isStarred }: skillTag = $props();
+	let { skill = 'svelte' }: { skill: skillKey } = $props();
+	let { name, desc, isStarred }: skillTag = skillTagDictionary[skill];
 </script>
 
 <article
 	class="skill-tag group relative grid grid-cols-[2.5rem_auto] gap-x-2.5 rounded-xl border border-transparent bg-btn p-2.5 transition-colors [grid-template-areas:'icon_name''icon_desc'] hover:border-btn-hover"
 >
-	<Icon className="[grid-area:icon]" name={name.replace(' ', '')} />
+	<TechIcon className="[grid-area:icon]" name={skill} />
 	<div class="h-6 overflow-hidden text-nowrap text-ellipsis capitalize [grid-area:name]">
 		{name}
 	</div>

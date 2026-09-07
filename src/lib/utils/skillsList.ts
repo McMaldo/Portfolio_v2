@@ -1,6 +1,47 @@
 import type { skillTag } from '$lib/types/skillTag';
 
-export const skillKeys: string[] = [
+export type skillKey =
+	| 'cpp'
+	| 'html'
+	| 'css'
+	| 'sublime'
+	| 'vscode'
+	| 'js'
+	| 'python'
+	| 'php'
+	| 'arduino'
+	| 'mysql'
+	| 'git'
+	| 'github'
+	| 'react'
+	| 'vite'
+	| 'node'
+	| 'bash'
+	| 'figma'
+	| 'mui'
+	| 'antd'
+	| 'gitlab'
+	| 'express'
+	| 'trello'
+	| 'notion'
+	| 'windsurf'
+	| 'trae'
+	| 'obsidian'
+	| 'tailwind'
+	| 'ubuntu'
+	| 'arch'
+	| 'i3'
+	| 'plasma'
+	| 'gnome'
+	| 'hyprland'
+	| 'caelestia'
+	| 'zed'
+	| 'zen'
+	| 'ts'
+	| 'svelte'
+	| 'vercel'
+	| 'haskell';
+export const skillKeys: skillKey[] = [
 	'cpp',
 	'html',
 	'css',
@@ -14,8 +55,12 @@ export const skillKeys: string[] = [
 	'git',
 	'github',
 	'react',
+	'vite',
+	'node',
 	'bash',
 	'figma',
+	'mui',
+	'antd',
 	'gitlab',
 	'express',
 	'trello',
@@ -38,7 +83,7 @@ export const skillKeys: string[] = [
 	'vercel',
 	'haskell'
 ];
-export const skillTagDictionary: Record<string, skillTag> = {
+export const skillTagDictionary: Record<skillKey, skillTag> = {
 	cpp: { name: 'C++', desc: 'Programming Lang.', date: '05/07/2021' },
 	html: { name: 'HTML', desc: 'Markup Lang.', date: '29/06/2022' },
 	css: { name: 'CSS', desc: 'Style Sheet Lang.', date: '29/06/2022' },
@@ -52,14 +97,18 @@ export const skillTagDictionary: Record<string, skillTag> = {
 	git: { name: 'Git', desc: 'Version Control', date: '02/04/2024' },
 	github: { name: 'Github', desc: 'Version Control', date: '02/04/2024' },
 	react: { name: 'React', desc: 'JS Library', isStarred: true, date: '17/04/2024' },
+	vite: { name: 'Vite', desc: 'JS Library', date: '17/04/2024' },
+	node: { name: 'Node JS', desc: 'JS Library', date: '17/04/2024' },
 	bash: { name: 'Bash', desc: 'Shell Lang.', date: '07/05/2024' },
 	figma: { name: 'Figma', desc: 'Design Tool', date: '30/05/2024' },
+	mui: { name: 'MaterialUI', desc: 'React Library', date: '31/10/2024' },
+	antd: { name: 'Ant Design', desc: 'Components Library', date: '31/10/2024' },
 	gitlab: { name: 'Gitlab', desc: 'Version Control', date: '23/06/2024' },
 	express: { name: 'Express JS', desc: 'Node JS Library', date: '28/08/2024' },
 	trello: { name: 'Trello', desc: 'Organization', date: '23/09/2024' },
 	notion: { name: 'Notion', desc: 'Organization & Notes', date: '05/10/2024' },
 	windsurf: { name: 'Windsurf', desc: 'Code Editor', date: '11/03/2025' },
-	trae: { name: 'Trae', desc: 'Code Editor', date: '11/03/2025' },
+	trae: { name: 'TraeAI', desc: 'Code Editor', date: '11/03/2025' },
 	obsidian: { name: 'Obsidian', desc: 'Organization & Notes', date: '03/07/2025' },
 	tailwind: { name: 'Tailwind CSS', desc: 'CSS Library', isStarred: true, date: '11/08/2025' },
 	ubuntu: { name: 'Ubuntu Linux', desc: 'Linux Distro', date: '23/08/2025' },

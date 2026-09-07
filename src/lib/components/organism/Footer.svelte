@@ -4,11 +4,11 @@
 	import TechIcon from '../atom/TechIcon.svelte';
 
 	const techStack: link[] = [
-		{ name: 'Svelte', href: 'https://svelte.dev/' },
-		{ name: 'TypeScript', href: 'https://www.typescriptlang.org/' },
-		{ name: 'Vite', href: 'https://vite.dev' },
-		{ name: 'TailwindCSS', href: 'https://tailwindcss.com/' },
-		{ name: 'Vercel', href: 'https://vercel.com/' }
+		{ tech: 'svelte', name: 'Svelte', href: 'https://svelte.dev/' },
+		{ tech: 'ts', name: 'Type Script', href: 'https://www.typescriptlang.org/' },
+		{ tech: 'vite', name: 'Vite', href: 'https://vite.dev' },
+		{ tech: 'tailwind', name: 'Tailwind CSS', href: 'https://tailwindcss.com/' },
+		{ tech: 'vercel', name: 'Vercel', href: 'https://vercel.com/' }
 	];
 	const contacts: link[] = [
 		{ icon: 'envelope', name: 'Email', href: 'mailto:maldonado.ignacio.pablo@gmail.com' },
@@ -51,9 +51,9 @@
 			<div>
 				<h3 class="text-xl text-icon">Tech Stack</h3>
 				<div class="flex gap-4 pt-1">
-					{#each techStack as { name, href } (name)}
+					{#each techStack as { tech, name, href } (name)}
 						<a {href} title={name} class="group">
-							<TechIcon {name} />
+							<TechIcon name={tech ?? 'svelte'} />
 						</a>
 					{/each}
 				</div>
@@ -65,7 +65,7 @@
 				<div class="flex flex-col gap-2 pt-1 pl-2">
 					{#each contacts as { icon, href, name } (icon)}
 						<a {href} class="flex items-center gap-2 hover:underline" target="_blank">
-							<FaIcon name={icon} className="size-6" />
+							<FaIcon name={icon ?? ''} className="size-6" />
 							<span>{name}</span>
 						</a>
 					{/each}

@@ -1,12 +1,13 @@
 import { writable, derived } from 'svelte/store';
 import type { ProjectCard } from '../types/projectCard';
+import type { skillKey } from '$lib/utils/skillsList';
 
-export const filter = writable('');
+export const filter = writable<skillKey | null>(null);
 export const projects = writable<ProjectCard[]>([
 	{
 		img: 'kiwi_tt',
 		name: 'Kiwi TT',
-		techs: ['React', 'JavaScript', 'CSS', 'MaterialUI', 'Antd', 'MySQL'],
+		techs: ['react', 'js', 'css', 'mui', 'antd', 'mysql'],
 		desc: {
 			en: 'Allows you to administrate a work team through the agile methodology SCRUM, distributing tasks with different priorities & submission deadlines',
 			es: 'Permite administrar a un grupo de trabajo mediante la metodología agil SCRUM, designando tareas con distintas prioridades y plazos de entrega.'
@@ -18,7 +19,7 @@ export const projects = writable<ProjectCard[]>([
 	{
 		img: 'App_Resto',
 		name: 'App Resto',
-		techs: ['React', 'JavaScript', 'ExpressJS', 'NodeJS', 'CSS', 'MySQL'],
+		techs: ['react', 'js', 'express', 'node', 'css', 'mysql'],
 		desc: {
 			en: 'Offers multiples plates with differents clasifications, a cart to manage the purchases & generates the total to pay. Also brings an API to record all the purchases',
 			es: 'Ofrece múltiples platos con diferentes clasificaciones, un carrito para administrar las compras y un generador del total a pagar. Además una API para registar las compras.'
@@ -30,7 +31,7 @@ export const projects = writable<ProjectCard[]>([
 	{
 		img: 'App_Station',
 		name: 'App Station',
-		techs: ['PHP', 'CSS', 'HTML', 'JavaScript', 'MySQL'],
+		techs: ['php', 'css', 'html', 'js', 'mysql'],
 		desc: {
 			en: 'Shows the climate change in a web app completely responsive, check the statistics as the temperature, humidity, atmospheric pressure & more',
 			es: 'Observa el cambio climatico en un app web totalmente responsive, verifica estadisticas como la temperatura, humedad, presión atmosferica y más.'
@@ -46,7 +47,7 @@ export const projects = writable<ProjectCard[]>([
 	{
 		img: 'Tech_Shop',
 		name: 'Tech Shop',
-		techs: ['React', 'JavaScript', 'TailwindCSS', 'HTML', 'Vercel'],
+		techs: ['react', 'js', 'tailwind', 'html', 'vercel'],
 		desc: {
 			en: 'E-commerce with a variety of peripherals to the computer, notebook, console & mobile, articles to your setup that you can filter by category, and price.',
 			es: 'E-commerce con una variedad de perifericos de computadora, notebook, consola y móvil, artículos para tu setup, que podrás filtrar por categoría, y precio.'
@@ -58,7 +59,7 @@ export const projects = writable<ProjectCard[]>([
 	{
 		img: 'App_Clothing_Store',
 		name: 'App Clothing Store',
-		techs: ['CSS', 'JavaScript', 'HTML'],
+		techs: ['css', 'js', 'html'],
 		desc: {
 			en: "E-commerce with multiples clothing options, & a cart to manage the purchases from the user. It's a SPA built with only JS Vanilla for its functionality",
 			es: 'E-commerce con múltiples opciones de ropa, y un carrito para administrar las compras de un usuario. Es una SPA elaborada con únicamente JS Vanilla para su funcionalidad.'
@@ -70,7 +71,7 @@ export const projects = writable<ProjectCard[]>([
 	{
 		img: 'Webgenerator',
 		name: 'Webgenerator',
-		techs: ['PHP', 'HTML', 'Bash', 'MySQL'],
+		techs: ['php', 'html', 'bash', 'mysql'],
 		desc: {
 			en: 'Generates the structure for a web application and manage all the apps from your account. All user apps can be edited or deleted by an administrator.',
 			es: 'Genera la estrucutra para una aplicación web. Además permite adminitrar las generadas por un mismo usuario y las de todos los registrados por un admin.'
@@ -86,7 +87,7 @@ export const projects = writable<ProjectCard[]>([
 	{
 		img: 'Mini_Games_JS',
 		name: 'Mini Games JS',
-		techs: ['JavaScript', 'CSS', 'HTML'],
+		techs: ['js', 'css', 'html'],
 		desc: {
 			en: 'A collection of mini games made with Java Script Vanilla, with a bit of practice in OOP. Some of them are: space invaders, pac-man and more.',
 			es: 'Una colección de mini juegos desarrollados con Java Script Vanilla, con una ligera practica de POO. Algunos de ellos: space invaders, pac-man y más.'
@@ -98,7 +99,7 @@ export const projects = writable<ProjectCard[]>([
 	{
 		img: 'D&D_Char',
 		name: 'D&D Character',
-		techs: ['React', 'TailwindCSS', 'HTML'],
+		techs: ['react', 'tailwind', 'html'],
 		desc: {
 			en: 'Build your own Character based on the Dungeons & Dragons rules from the 5th edition manuals. You can also learn about the different species and classes.',
 			es: 'Crea tu propio personaje basado en los manuales de la 5ta edición de Dungeons & Dragons. Además puedes aprender acerca de las distintas especies y clases.'

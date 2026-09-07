@@ -3,18 +3,11 @@
 	import { isEnglish } from '$lib/stores/language.js';
 	import Button from '../atom/Button.svelte';
 	import TechIcon from '../atom/TechIcon.svelte';
-	const skills: string[] = [
-		'React',
-		'Tailwind CSS',
-		'Java Script',
-		'Express JS',
-		'PHP',
-		'MySQL',
-		'CSS'
-	];
+	import { skillTagDictionary, type skillKey } from '$lib/utils/skillsList.js';
+	const skills: skillKey[] = ['react', 'tailwind', 'js', 'express', 'php', 'mysql', 'css'];
 
 	let isFilterOpened: boolean = $state(false);
-	function setFilter(tech: string) {
+	function setFilter(tech: skillKey) {
 		$filter = tech;
 	}
 	function clearFilter() {
@@ -39,18 +32,17 @@
 		<div
 			class="flex animate-slide-down flex-col gap-2 rounded-lg border border-main-sm bg-btn p-2 shadow-md shadow-bg"
 		>
-			{#each skills as name, index (name)}
+			{#each skills as tech, index (tech)}
 				<button
 					tabindex={index}
 					onclick={() => {
-						let tech = name.replace(' ', '');
 						if ($filter == tech) clearFilter();
 						else setFilter(tech);
 					}}
-					class={`group flex cursor-pointer items-center rounded-md transition-colors select-none ${$filter == name.replace(' ', '') ? 'bg-btn-hover' : 'text-font-light hover:text-font'}`}
+					class={`group flex cursor-pointer items-center rounded-md transition-colors select-none ${$filter == tech ? 'bg-btn-hover' : 'text-font-light hover:text-font'}`}
 				>
-					<TechIcon {name} size="size-8" />
-					<span class="px-2">{name}</span>
+					<TechIcon name={tech} size="size-8" />
+					<span class="px-2">{skillTagDictionary[tech].name}</span>
 				</button>
 			{/each}
 			<button
