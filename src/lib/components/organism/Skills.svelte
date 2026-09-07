@@ -4,11 +4,14 @@
 	import SkillsGroup from '../molecule/SkillsGroup.svelte';
 	import Button from '../atom/Button.svelte';
 	import SkillsTimeLine from '../molecule/SkillsTimeLine.svelte';
+	import type { skillKey } from '$lib/utils/skillsList';
+	import { fade } from 'svelte/transition';
 
 	let sectionOpened = $state('main');
+
 	const skills: {
 		catName: strMultiLang;
-		skills: string[] | strMultiLang[];
+		skills: skillKey[] | strMultiLang[];
 	}[] = [
 		{
 			catName: { en: 'Front-end', es: 'Front-end' },
@@ -51,11 +54,28 @@
 			]
 		}
 	];
+
+	// Animación de altura
+	let contentEl: HTMLDivElement | undefined = $state();
+	let contentHeight = $state(0);
+	let hasMeasured = $state(false);
+
+	$effect(() => {
+		if (!contentEl) return;
+
+		const resizeObserver = new ResizeObserver((entries) => {
+			contentHeight = entries[0].contentRect.height;
+			hasMeasured = true;
+		});
+		resizeObserver.observe(contentEl);
+
+		return () => resizeObserver.disconnect();
+	});
 </script>
 
 <section
 	id="skills"
-	class="flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
+	class="relative flex w-full animate-slide-left flex-col gap-4 rounded-2xl border border-main-sm p-4 lg:p-6"
 >
 	<h2>{$isEnglish ? 'Mis Habilidades' : 'My Skills'}</h2>
 	<div
@@ -74,12 +94,22 @@
 			<div class="w-fill h-1 rounded-t-full bg-main-sm"></div>
 		</div>
 	</div>
-
-	{#if sectionOpened == 'main'}
-		{#each skills as cat (cat.catName)}
-			<SkillsGroup {...cat} />
-		{/each}
-	{:else}
-		<SkillsTimeLine />
-	{/if}
+	<div
+		class="overflow-hidden {hasMeasured ? 'transition-[height] duration-300 ease-in-out' : ''}"
+		style="height: {hasMeasured ? contentHeight + 'px' : 'auto'}"
+	>
+		{#key sectionOpened}
+			<div in:fade={{ duration: 200, delay: 150 }} out:fade={{ duration: 150 }}>
+				<div bind:this={contentEl} class="flex flex-col gap-4">
+					{#if sectionOpened == 'main'}
+						{#each skills as cat (cat.catName)}
+							<SkillsGroup {...cat} />
+						{/each}
+					{:else}
+						<SkillsTimeLine />
+					{/if}
+				</div>
+			</div>
+		{/key}
+	</div>
 </section>
